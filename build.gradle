@@ -1,0 +1,51 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+//buildscript {
+//    ext {
+//        springBootVersion = '2.6.7'
+//        queryDslVersion = '5.0.0'
+//        springDataVersion = '2021.1.4'
+//        dependencyManagementVersion = '1.0.11.RELEASE'
+//    }
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        dependencies {
+//            classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+//            classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementVersion}"
+//        }
+//    }
+//}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.jojoldu.book'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+//test {
+//    useJUnitPlatform()
+//}
